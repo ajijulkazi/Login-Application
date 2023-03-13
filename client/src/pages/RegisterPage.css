@@ -1,0 +1,212 @@
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s ease-out;
+    text-decoration: none;
+}
+.register-form{
+    border: var(--border);
+    /* border-radius: .5rem; */
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    border-color: aqua;
+    /* background-color: azure; */
+    /* background-image: url('../../image/register.jpg'); */
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.register-form .heading h2{
+    text-align: center;
+    color: var(--black);
+    padding-bottom: .4rem;
+    font-size: 2rem;
+}
+
+.register-form .form-all form .box{
+    width: 30%;
+    margin: .5rem 2rem;
+    border-radius: .5rem;
+    border: var(--border);
+    font-size: 1rem;
+    color: var(--black);
+    text-transform: none;
+    padding: 1rem;
+    text-align: center;
+    margin-left: 27rem;
+}
+
+.register-form .form-all form .btn{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: 35rem;
+}
+.btn {
+    border: var(--border);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    color: var(--green);
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+.btn:hover{
+    color: #fff;
+    background:var(--green);
+}
+
+
+.register-form .old-user{
+    font-size: 2rem;
+    margin-left: 18rem;
+    padding-top: 2rem;
+    
+}
+
+.register-form .old-user p{
+    margin-left: 5rem;
+    color: #fff;
+}
+.register-form .old-user .or{
+    color: #fff;
+}
+/* .register-form .old-user span{
+    font-size: 1rem;
+    color:var(--light-color);
+    margin-left: 1rem;
+    cursor: pointer;
+
+} */
+
+.register-form .old-user span{
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: underline;
+}
+.log-btn{
+    background-color: goldenrod;
+    width: 200px;
+    height: 35px;
+    border: 1px solid grey;
+    border-radius: .5rem;
+    cursor: pointer;
+    margin-left: 14rem;
+    font-size: 1rem;
+}
+
+
+@media(max-width:991px){
+    html{
+      font-size: 55%;
+    }
+    .header{
+      padding: 2rem;
+    }
+  }
+  
+  
+  @media(max-width:768px){
+    .register-form .form-all form .box{
+        width: 40%;
+        margin: .5rem 2rem;
+        border-radius: .5rem;
+        border: var(--border);
+        font-size: 1rem;
+        color: var(--black);
+        text-transform: none;
+        padding: 1.4rem;
+        text-align: center;
+        margin-left: 27rem;
+    }
+    .register-form .form-all form .btn{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-left: 37rem;
+    }
+    
+    
+  }
+  
+  @media(max-width:510px){
+    .register-form .form-all form .box{
+        width: 50%;
+        margin: .5rem 2rem;
+        border-radius: .5rem;
+        border: var(--border);
+        font-size: 1rem;
+        color: var(--black);
+        text-transform: none;
+        padding: 1.4rem;
+        text-align: center;
+        margin-left: 15rem;
+    }
+    .register-form .form-all form .btn{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-left: 25rem;
+    }
+    .register-form .old-user{
+        font-size: 2rem;
+        margin-left: 8rem;
+        padding-top: 2rem;
+        
+    }
+
+    .log-btn{
+        background-color: goldenrod;
+        width: 200px;
+        height: 35px;
+        border: 1px solid grey;
+        border-radius: .5rem;
+        cursor: pointer;
+        margin-left:10rem;
+        font-size: 1rem;
+    }
+    
+    
+  }
+
+  @media(max-width:450px){
+    .register-form .form-all form .box{
+        width: 50%;
+        margin: .5rem 2rem;
+        border-radius: .5rem;
+        border: var(--border);
+        font-size: 1rem;
+        color: var(--black);
+        text-transform: none;
+        padding: 1rem;
+        text-align: center;
+        margin-left: 8rem;
+    }
+    .register-form .form-all form .btn{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-left: 10rem;
+    }
+    .register-form .old-user{
+        font-size: 2rem;
+        margin-left: 3rem;
+        padding-top: 2rem;
+        
+    }
+
+    .log-btn{
+        background-color: goldenrod;
+        width: 200px;
+        height: 35px;
+        border: 1px solid grey;
+        border-radius: .5rem;
+        cursor: pointer;
+        margin-left:initial;
+        font-size: 1rem;
+    }
+    
+  }
