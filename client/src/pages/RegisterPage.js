@@ -14,6 +14,8 @@ export default function Register() {
                         <form>
                             <input type="text" name="" id="" placeholder='Your Name'className='box' /><br/>
                             <input type="email" name="" id="" placeholder='Your Email'className='box' /><br/>
+                            <input type="Number" name="" id="" placeholder='Phone Number'className='box' /><br/>
+                            <input type="text" name="" id="" placeholder='Country'className='box' /><br/>
                             <input type="password" name="" id="" placeholder='Enter Your Password' className='box' /> <br />
                             <input type="password" name="" id="" placeholder='Re-enter password' className='box' /><br />
                             <input type="submit" value="Submit" className='btn' />

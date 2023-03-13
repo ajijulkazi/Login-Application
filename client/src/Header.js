@@ -1,13 +1,25 @@
 
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 // import {FaHeartbeat,FaBars} from 'react-icons/fa';
 // import './Header.css';
 import useAuth from './pages/HooksPage/useAuth';
+import { UserContext } from './UserContext';
 
 
 export default function Header() {
     const {user, logOut} = useAuth();
+    const {userInfo,setUserInfo} = useContext(UserContext);
+  useEffect(() => {
+    fetch('http://localhost:5000/login',{
+        credentials: 'include',
+    }).then(response =>{
+      response.json().then(userInfo => {
+        setUserInfo(userInfo);
+      });
+    });
+    
+  },[])
     // window.onload = function(){ 
         // your code 
     //     var menu= document.querySelector('#menu-btn');
@@ -24,21 +36,24 @@ export default function Header() {
     // }
     // };
     
-    
+    const username = userInfo?.username;
     return (
         <div className='header'>
             <h1>STAY WITH ME</h1>
             
+            <nav>
             <div className="regi-btn">
                 {/* { user.email && <span style={{color: 'white'}}>{user.displayName}</span>} */}
-            
-                {
-                user.email ?
-                    <button onClick={logOut} className='login-btn'>{user.displayName}</button>
-                :
-                <div><NavLink className='login-btn' to='/login'>Login</NavLink>
-                <NavLink className='signup-btn' to='/register'>Register</NavLink></div>}
+                <>
+                    {
+                        user.email ?
+                            <button onClick={logOut} className='login-btn'>{user.displayName}</button>
+                        :
+                        <div><NavLink className='login-btn' to='/login'>Login</NavLink>
+                        <NavLink className='signup-btn' to='/register'>Register</NavLink></div>}
+                    </>
             </div>
+            </nav>
         </div>
     );
 };

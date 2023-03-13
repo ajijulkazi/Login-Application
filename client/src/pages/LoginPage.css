@@ -52,6 +52,7 @@
     border-radius: 0.5rem;
     box-shadow: var(--box-shadow);
     color: var(--green);
+    font-size: 1rem;
     cursor: pointer;
     display: inline-block;
     margin-top: 1rem;
