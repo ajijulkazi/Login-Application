@@ -4,22 +4,22 @@ import { NavLink } from 'react-router-dom';
 // import {FaHeartbeat,FaBars} from 'react-icons/fa';
 // import './Header.css';
 import useAuth from './pages/HooksPage/useAuth';
-import { UserContext } from './UserContext';
+// import { UserContext } from './UserContext';
 
 
 export default function Header() {
     const {user, logOut} = useAuth();
-    const {userInfo,setUserInfo} = useContext(UserContext);
-  useEffect(() => {
-    fetch('http://localhost:5000/login',{
-        credentials: 'include',
-    }).then(response =>{
-      response.json().then(userInfo => {
-        setUserInfo(userInfo);
-      });
-    });
+//     const {userInfo,setUserInfo} = useContext(UserContext);
+//   useEffect(() => {
+//     fetch('http://localhost:5000/login',{
+//         credentials: 'include',
+//     }).then(response =>{
+//       response.json().then(userInfo => {
+//         setUserInfo(userInfo);
+//       });
+//     });
     
-  },[])
+//   },[])
     // window.onload = function(){ 
         // your code 
     //     var menu= document.querySelector('#menu-btn');
@@ -35,8 +35,17 @@ export default function Header() {
     //     navbar.classList.remove('active');
     // }
     // };
+    // function logout(ev){
+    //     ev.preventDefault();
+    //     fetch('http://localhost:5000/logout',{
+    //       credentials: 'include',
+    //       method: 'POST',
+    //     })
+    //     setUserInfo(null);
+      
+    //   }
     
-    const username = userInfo?.username;
+    // const username = userInfo?.username;
     return (
         <div className='header'>
             <h1>STAY WITH ME</h1>

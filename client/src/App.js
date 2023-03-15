@@ -4,11 +4,13 @@ import AuthProvider from './Context/AuthProvider';
 import Layout from './Layout';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import { UserContextProvider } from './UserContext';
 
 function App() {
   return (
     <div className="App">
-        <AuthProvider>
+      <UserContextProvider>
+      <AuthProvider>
           <Routes>
               <Route path='/' element={<Layout/>}>
                 <Route path='/' element={<LoginPage/>}/>
@@ -17,6 +19,8 @@ function App() {
               </Route>
           </Routes>
         </AuthProvider>
+      </UserContextProvider>
+        
       
     </div>
   );

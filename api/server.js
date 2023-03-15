@@ -48,19 +48,20 @@ app.post('/register', async(req, res) => {
 });
 
 app.post('/login', async (req, res) =>{
-    //console.log("request-body :", req.body)
-    const {username, password} = req.body;
-    const userDoc = await User.findOne({username});
-    console.log(userDoc);
-    console.log(userDoc.password);
+    // console.log("request-body :", req.body)
+    const {email, password} = req.body;
+    const userDoc = await User.findOne({email});
     const passOk = bcrypt.compareSync(password, userDoc.password);
     console.log(passOk);
     if(passOk){
-        jwt.sign({username,id:userDoc._id}, secret, {}, (err,token) => {
+        jwt.sign({email,id:userDoc._id}, secret, {}, (err,token) => {
             if(err) throw err;
             res.cookie('token', token).json({
-                id:userDoc._id,
-                username,
+                id:userDoc._id, 
+                email,
+                             
+                
+                
             });
             //res.status(200).json(token);
         });
@@ -68,6 +69,11 @@ app.post('/login', async (req, res) =>{
         res.status(400).json('wrong credentials');
     }
 });
+
+app.post('/logout', (req, res) => {
+    res.cookie('token', '').json('ok');
+});
+
 
 app.get('/register', async (req, res) => {
     const allUser = await User.find();
